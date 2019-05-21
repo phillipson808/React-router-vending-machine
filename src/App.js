@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+import VendingMachine from './components/VendingMachine';
+import Chips from './components/Chips';
+import Cookies from './components/Cookies';
+import IceCream from './components/IceCream';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <BrowserRouter>
+        <Route exact path='/chips' render={() => <Chips/>} />
+        <Route exact path='/cookies' render={() => <Cookies/>} />
+        <Route exact path='/icecream' render={() => <IceCream/>} />
+        <Route exact path='/' render={() => <VendingMachine/>} />
+        
+        
+      </BrowserRouter>
     </div>
-  );
-}
+
+        )
+  }
 
 export default App;
